@@ -1,8 +1,8 @@
-<Doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport"content="width=device-width,initial-scale=1.0">
+<meta name="viewport"content="width=device-width, initial-scale=1.0">
 <title>Fuck me</title>
 <script>
 window.onload=function() {
@@ -21,12 +21,12 @@ body {
     }
     .large-text {
     font-size: 100px;
-    front-weight: bold;
+    font-weight: bold;
     }
     </style>
   </head>
     <body>
       <div>"Pitica nenorocita"</div>
-      <img src="wpid_vadim_tudor_ochelari6_09243300.jpg alt="." width="500" height="600">
+      <img src="wpid_vadim_tudor_ochelari6_09243300.jpg" alt="." width="500" height="600">
   </body>
 </html>
