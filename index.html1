@@ -1,0 +1,32 @@
+<Doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"content="width=device-width,initial-scale=1.0">
+<title>Fuck me</title>
+<script>
+window.onload=function() {
+alert("Do you wanna see my boobs?");
+}
+</script>
+<style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #E6E6FA;
+    font-family: Arial, sans-serif;
+    }
+    .large-text {
+    font-size: 100px;
+    front-weight: bold;
+    }
+    </style>
+  </head>
+    <body>
+      <div>"Pitica nenorocita"</div>
+      <img src="images/poza.jpg" alt="." width="500" height="600">
+  </body>
+</html>
