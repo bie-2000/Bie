@@ -6,14 +6,23 @@
   <title>Go fuck yourself</title>
   <script>
     window.onload = function () {
-      const userResponse = confirm("Do you wanna see my boobs?");
-      if (userResponse) {
-        document.getElementById('imageYes').style.display = 'block';  // Afișează imaginea pentru 'Yes'
-        document.getElementById('imageNo').style.display = 'none';   // Ascunde imaginea pentru 'No'
-      } else {
-        document.getElementById('imageYes').style.display = 'none';  // Ascunde imaginea pentru 'Yes'
-        document.getElementById('imageNo').style.display = 'block';  // Afișează imaginea pentru 'No'
-      }
+      const dialog = document.getElementById('customDialog');
+      const yesButton = document.getElementById('yesButton');
+      const noButton = document.getElementById('noButton');
+      
+      dialog.style.display = 'block'; // Afișează dialogul personalizat
+      
+      yesButton.onclick = function () {
+        document.getElementById('imageYes').style.display = 'block';
+        document.getElementById('imageNo').style.display = 'none';
+        dialog.style.display = 'none'; // Ascunde dialogul după selecție
+      };
+      
+      noButton.onclick = function () {
+        document.getElementById('imageYes').style.display = 'none';
+        document.getElementById('imageNo').style.display = 'block';
+        dialog.style.display = 'none'; // Ascunde dialogul după selecție
+      };
     };
   </script>
   <style>
@@ -26,18 +35,62 @@
       margin: 0;
       background-color: #E6E6FA;
       font-family: Arial, sans-serif;
+    }
+    #customDialog {
+      display: none; /* Ascunde dialogul inițial */
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       text-align: center;
-      mg {
+      border-radius: 8px;
+      z-index: 1000;
+    }
+    #customDialog p {
+      font-size: 24px; /* Dimensiune mai mare */
+      font-weight: bold; /* Text îngroșat */
+      margin-bottom: 20px;
+    }
+    #customDialog button {
+      font-size: 18px;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #customDialog #yesButton {
+      background-color: #4CAF50;
+      color: white;
+    }
+    #customDialog #noButton {
+      background-color: #f44336;
+      color: white;
+    }
+    img {
       display: none; /* Imaginile sunt ascunse inițial */
-  
+      margin-top: 20px;
+    }
+    #imageNo {
+      width: 150px; /* Dimensiunea redusă la jumătate */
+      height: auto;
+    }
   </style>
 </head>
 <body>
+  <div id="customDialog">
+    <p>Do you wanna see my boobs?</p>
+    <button id="yesButton">Yes</button>
+    <button id="noButton">No</button>
+  </div>
+
   <!-- Imaginea care va apărea dacă utilizatorul selectează Yes -->
   <img id="imageYes" src="https://raw.githubusercontent.com/bie-2000/Bie/main/download.JPG" alt="Image for Yes">
 
   <!-- Imaginea care va apărea dacă utilizatorul selectează No -->
   <img id="imageNo" src="https://raw.githubusercontent.com/bie-2000/Bie/main/wpid_vadim_tudor_ochelari6_09243300.jpg" alt="Image for No">
-
 </body>
 </html>
