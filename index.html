@@ -1,40 +1,57 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport"content="width=device-width, initial-scale=1.0">
-<title>Go fu*k yourself</title>
-<script>
-window.onload=function() {
-const userResponse = confirm("Do you wanna see my message?");
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Page</title>
+  <script>
+    window.onload = function () {
+      const userResponse = confirm("Do you wanna see my boobs?");
       if (userResponse) {
-        alert("You selected Yes!");
+        document.getElementById('imageYes').style.display = 'block';  // Afișează imaginea pentru 'Yes'
+        document.getElementById('imageNo').style.display = 'none';   // Ascunde imaginea pentru 'No'
       } else {
-        alert("You selected No!");
+        document.getElementById('imageYes').style.display = 'none';  // Ascunde imaginea pentru 'Yes'
+        document.getElementById('imageNo').style.display = 'block';  // Afișează imaginea pentru 'No'
       }
     };
-</script>
-<style>
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #E6E6FA;
-    font-family: Arial, sans-serif;
+  </script>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #E6E6FA;
+      font-family: Arial, sans-serif;
     }
     .large-text {
-    font-size: 100px;
-    front-weight: bold;
+      font-size: 100px;
+      font-weight: bold;
     }
-    </style>
-  </head>
-    <body>
-        <div>"Pitica nenorocita"</div>
-        <div class="large-text">imagine din GitHub</div>
-      <img src="wpid_vadim_tudor_ochelari6_0924330.jpg" alt="vadim" width="500" height="600">
-      <div class="emoji">&#x1F608;</div>
-      <div class="large-text">( &#8226; )( &#8226; )</div>
-  </body>
+    .emoji {
+      font-size: 50px;
+    }
+    img {
+      width: 500px;
+      height: 600px;
+      display: none; /* Imaginile sunt ascunse inițial */
+    }
+  </style>
+</head>
+<body>
+  <div>"Sample Text"</div>
+  <div class="large-text">Image from GitHub</div>
+  
+  <!-- Imaginea care va apărea dacă utilizatorul selectează Yes -->
+  <img id="imageYes" src="image_yes.jpg" alt="Image for Yes">
+
+  <!-- Imaginea care va apărea dacă utilizatorul selectează No -->
+  <img id="imageNo" src="image_no.jpg" alt="Image for No">
+
+  <div class="emoji">&#x1F608;</div>
+  <div class="large-text">( &#8226; )( &#8226; )</div>
+</body>
 </html>
