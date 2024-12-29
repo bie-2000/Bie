@@ -42,7 +42,7 @@
 
       document.getElementById('noAfterNo').onclick = function () {
         // Muta butonul "No" pentru a nu mai fi selectabil
-        noButtonMove.style.transform = 'translate(1000px, 0)';
+        noButtonMove.style.animation = 'moveButton 3s linear infinite';
         noButtonMove.disabled = true;
       };
     };
@@ -135,6 +135,26 @@
       display: none;
       margin-top: 20px;
     }
+
+    /* Animația pentru mișcarea butonului "No" */
+    @keyframes moveButton {
+      0% {
+        transform: translate(0, 0);
+      }
+      25% {
+        transform: translate(200px, -200px);
+      }
+      50% {
+        transform: translate(-300px, 300px);
+      }
+      75% {
+        transform: translate(400px, -150px);
+      }
+      100% {
+        transform: translate(-500px, 200px);
+      }
+    }
+
     #noButtonMove {
       transition: transform 1s;
     }
@@ -144,7 +164,7 @@
   <div id="customDialog">
     <p>Do you wanna see my boobs?</p>
     <button id="yesButton">Yes</button>
-    <button id="noButton">No</button>
+    <button id="noButton" id="noButtonMove">No</button>
   </div>
 
   <!-- Imaginea care va apărea dacă utilizatorul selectează Yes -->
@@ -167,7 +187,7 @@
   <!-- Containnerul pentru video, care va apărea doar dacă se selectează "Yes" -->
   <div id="videoContainer">
     <iframe width="420" height="315"
-src="https://www.youtube.com/embed/2GeOa14pOuM">
+src="https://www.youtube.com/embed/2GeOa14pOuM?autoplay=1">
 </iframe>
   </div>
 </body>
