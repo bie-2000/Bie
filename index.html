@@ -11,12 +11,11 @@
       const yesButton = document.getElementById('yesButton');
       const noButton = document.getElementById('noButton');
       const textAfterNo = document.getElementById('textAfterNo');
-      const yesButton = document.getElementById('yesButton');
-      const noButton = document.getElementById('noButton');
+      const yesNoButtons = document.getElementById('yesNoButtons');
       const videoContainer = document.getElementById('videoContainer');
       
       dialog.style.display = 'block'; // Show the dialog initially
-      
+
       yesButton.onclick = function () {
         document.getElementById('imageYes').style.display = 'block';
         document.getElementById('imageNo').style.display = 'none';
@@ -51,7 +50,7 @@
       };
 
       document.getElementById('noAfterNo').onclick = function () {
-        // Apply the CSS rotation effect again
+        // Apply the CSS rotation effect again if No is clicked
         noButton.classList.add('rotated');
         noButton.innerHTML = 'Yes'; // Change text to "Yes"
       };
