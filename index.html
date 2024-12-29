@@ -34,7 +34,7 @@
         yesNoButtons.style.display = 'block';
         
         // Activate the animation for the "No" button
-        noButtonMove.style.animation = 'moveButton 3s linear infinite';
+        noButtonMove.classList.add('animateButton');
       };
       
       document.getElementById('yesAfterNo').onclick = function () {
@@ -45,7 +45,7 @@
 
       document.getElementById('noAfterNo').onclick = function () {
         // Move the "No" button indefinitely
-        noButtonMove.style.animation = 'moveButton 3s linear infinite';
+        noButtonMove.classList.add('animateButton');
         noButtonMove.disabled = true;
       };
     };
@@ -156,6 +156,11 @@
       100% {
         transform: translate(-500px, 200px);
       }
+    }
+
+    /* Class that triggers the animation for the button */
+    .animateButton {
+      animation: moveButton 3s linear infinite;
     }
 
     #noButtonMove {
