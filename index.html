@@ -11,6 +11,10 @@
       const dialog = document.getElementById('customDialog');
       const yesButton = document.getElementById('yesButton');
       const noButton = document.getElementById('noButton');
+      const textAfterNo = document.getElementById('textAfterNo');
+      const yesNoButtons = document.getElementById('yesNoButtons');
+      const videoContainer = document.getElementById('videoContainer');
+      const noButtonMove = document.getElementById('noButtonMove');
       
       dialog.style.display = 'block'; // Afișează dialogul personalizat
       
@@ -24,6 +28,22 @@
         document.getElementById('imageYes').style.display = 'none';
         document.getElementById('imageNo').style.display = 'block';
         dialog.style.display = 'none'; // Ascunde dialogul după selecție
+        
+        // Afișează textul și butoanele suplimentare
+        textAfterNo.style.display = 'block';
+        yesNoButtons.style.display = 'block';
+      };
+      
+      document.getElementById('yesAfterNo').onclick = function () {
+        videoContainer.style.display = 'block'; // Afișează video-ul
+        textAfterNo.style.display = 'none'; // Ascunde textul "Aaaa, m-ai gandeste-te putin!"
+        yesNoButtons.style.display = 'none'; // Ascunde butoanele "Yes" și "No"
+      };
+
+      document.getElementById('noAfterNo').onclick = function () {
+        // Muta butonul "No" pentru a nu mai fi selectabil
+        noButtonMove.style.transform = 'translate(1000px, 0)';
+        noButtonMove.disabled = true;
       };
     };
   </script>
@@ -77,12 +97,46 @@
       margin-top: 20px;
     }
     #imageNo {
-      width: 800px;
+      width: 500px;
       height: auto;
     }
     #imageYes {
       width: 400px;
       height: auto;
+    }
+    #textAfterNo {
+      display: none;
+      font-size: 24px;
+      font-weight: bold;
+      color: red;
+      margin-top: 20px;
+    }
+    #yesNoButtons {
+      display: none;
+      margin-top: 20px;
+    }
+    #yesNoButtons button {
+      font-size: 18px;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #yesAfterNo {
+      background-color: #4CAF50;
+      color: white;
+    }
+    #noAfterNo {
+      background-color: #f44336;
+      color: white;
+    }
+    #videoContainer {
+      display: none;
+      margin-top: 20px;
+    }
+    #noButtonMove {
+      transition: transform 1s;
     }
   </style>
 </head>
@@ -94,9 +148,27 @@
   </div>
 
   <!-- Imaginea care va apărea dacă utilizatorul selectează Yes -->
-  <img id="imageYes" src="https://raw.githubusercontent.com/bie-2000/Bie/main/download.JPG" alt="Image for Yes", style="border-radius: 20px; mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%); -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);">
+  <img id="imageYes" src="https://raw.githubusercontent.com/bie-2000/Bie/main/download.JPG" alt="Image for Yes" style="border-radius: 20px; mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%); -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);">
 
   <!-- Imaginea care va apărea dacă utilizatorul selectează No -->
-  <img id="imageNo" src="https://raw.githubusercontent.com/bie-2000/Bie/main/wpid_vadim_tudor_ochelari6_09243300.jpg" alt="Image for No", style="border-radius: 20px; mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%); -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);">
+  <img id="imageNo" src="https://raw.githubusercontent.com/bie-2000/Bie/main/wpid_vadim_tudor_ochelari6_09243300.jpg" alt="Image for No" style="border-radius: 20px; mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%); -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);">
+  
+  <!-- Textul care apare după ce se selectează No -->
+  <div id="textAfterNo">
+    Aaaa...m-ai gandeste-te putin!
+  </div>
+
+  <!-- Butoanele care apar după ce se selectează No -->
+  <div id="yesNoButtons">
+    <button id="yesAfterNo">Yes</button>
+    <button id="noAfterNo" id="noButtonMove">No</button>
+  </div>
+
+  <!-- Containnerul pentru video, care va apărea doar dacă se selectează "Yes" -->
+  <div id="videoContainer">
+    <iframe width="420" height="315"
+src="https://music.youtube.com/watch?v=2GeOa14pOuM">
+</iframe>
+  </div>
 </body>
 </html>
