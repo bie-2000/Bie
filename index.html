@@ -33,8 +33,8 @@
         textAfterNo.style.display = 'block';
         yesNoButtons.style.display = 'block';
         
-        // Activate the animation for the "No" button
-        noButtonMove.classList.add('animateButton');
+        // Apply explosion animation to the "No" button
+        noButtonMove.classList.add('explodeButton');
       };
       
       document.getElementById('yesAfterNo').onclick = function () {
@@ -44,8 +44,8 @@
       };
 
       document.getElementById('noAfterNo').onclick = function () {
-        // Move the "No" button indefinitely
-        noButtonMove.classList.add('animateButton');
+        // Explode the "No" button
+        noButtonMove.classList.add('explodeButton');
         noButtonMove.disabled = true;
       };
     };
@@ -139,28 +139,25 @@
       margin-top: 20px;
     }
 
-    /* Animation for moving the "No" button */
-    @keyframes moveButton {
+    /* Animation for explosion effect */
+    @keyframes explodeButton {
       0% {
-        transform: translate(0, 0);
-      }
-      25% {
-        transform: translate(200px, -200px);
+        transform: scale(1);
+        opacity: 1;
       }
       50% {
-        transform: translate(-300px, 300px);
-      }
-      75% {
-        transform: translate(400px, -150px);
+        transform: scale(2.5); /* The button grows */
+        opacity: 0.5; /* Fading effect */
       }
       100% {
-        transform: translate(-500px, 200px);
+        transform: scale(0); /* The button disappears */
+        opacity: 0;
       }
     }
 
-    /* Class that triggers the animation for the button */
-    .animateButton {
-      animation: moveButton 3s linear infinite;
+    /* Class that triggers the explosion effect */
+    .explodeButton {
+      animation: explodeButton 0.5s forwards; /* 0.5s for the explosion animation */
     }
 
     #noButtonMove {
