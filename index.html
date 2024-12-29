@@ -16,35 +16,35 @@
       const videoContainer = document.getElementById('videoContainer');
       const noButtonMove = document.getElementById('noButtonMove');
       
-      dialog.style.display = 'block'; // Afișează dialogul personalizat
+      dialog.style.display = 'block'; // Show the dialog initially
       
       yesButton.onclick = function () {
         document.getElementById('imageYes').style.display = 'block';
         document.getElementById('imageNo').style.display = 'none';
-        dialog.style.display = 'none'; // Ascunde dialogul după selecție
+        dialog.style.display = 'none'; // Hide dialog after selection
       };
       
       noButton.onclick = function () {
         document.getElementById('imageYes').style.display = 'none';
         document.getElementById('imageNo').style.display = 'block';
-        dialog.style.display = 'none'; // Ascunde dialogul după selecție
+        dialog.style.display = 'none'; // Hide dialog after selection
         
-        // Afișează textul și butoanele suplimentare
+        // Show the text and buttons after selecting No
         textAfterNo.style.display = 'block';
         yesNoButtons.style.display = 'block';
         
-        // Activare animație pentru butonul "No"
+        // Activate the animation for the "No" button
         noButtonMove.style.animation = 'moveButton 3s linear infinite';
       };
       
       document.getElementById('yesAfterNo').onclick = function () {
-        videoContainer.style.display = 'block'; // Afișează video-ul
-        textAfterNo.style.display = 'none'; // Ascunde textul "Aaaa, m-ai gandeste-te putin!"
-        yesNoButtons.style.display = 'none'; // Ascunde butoanele "Yes" și "No"
+        videoContainer.style.display = 'block'; // Show video
+        textAfterNo.style.display = 'none'; // Hide the "think about it" text
+        yesNoButtons.style.display = 'none'; // Hide Yes and No buttons
       };
 
       document.getElementById('noAfterNo').onclick = function () {
-        // Muta butonul "No" pentru a nu mai fi selectabil
+        // Move the "No" button indefinitely
         noButtonMove.style.animation = 'moveButton 3s linear infinite';
         noButtonMove.disabled = true;
       };
@@ -62,7 +62,7 @@
       font-family: Arial, sans-serif;
     }
     #customDialog {
-      display: none; /* Ascunde dialogul inițial */
+      display: none;
       position: fixed;
       top: 50%;
       left: 50%;
@@ -75,8 +75,8 @@
       z-index: 1000;
     }
     #customDialog p {
-      font-size: 24px; /* Dimensiune mai mare */
-      font-weight: bold; /* Text îngroșat */
+      font-size: 24px;
+      font-weight: bold;
       margin-bottom: 20px;
     }
     #customDialog button {
@@ -96,7 +96,7 @@
       color: white;
     }
     img {
-      display: none; /* Imaginile sunt ascunse inițial */
+      display: none;
       margin-top: 20px;
     }
     #imageNo {
@@ -139,7 +139,7 @@
       margin-top: 20px;
     }
 
-    /* Animația pentru mișcarea butonului "No" */
+    /* Animation for moving the "No" button */
     @keyframes moveButton {
       0% {
         transform: translate(0, 0);
@@ -159,7 +159,7 @@
     }
 
     #noButtonMove {
-      transition: transform 10s;
+      transition: transform 1s;
     }
   </style>
 </head>
@@ -170,28 +170,21 @@
     <button id="noButton" id="noButtonMove">No</button>
   </div>
 
-  <!-- Imaginea care va apărea dacă utilizatorul selectează Yes -->
   <img id="imageYes" src="https://raw.githubusercontent.com/bie-2000/Bie/main/download.JPG" alt="Image for Yes" style="border-radius: 20px; mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%); -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);">
 
-  <!-- Imaginea care va apărea dacă utilizatorul selectează No -->
   <img id="imageNo" src="https://raw.githubusercontent.com/bie-2000/Bie/main/wpid_vadim_tudor_ochelari6_09243300.jpg" alt="Image for No" style="border-radius: 20px; mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%); -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);">
   
-  <!-- Textul care apare după ce se selectează No -->
   <div id="textAfterNo">
     Aaaa...m-ai gandeste-te putin!
   </div>
 
-  <!-- Butoanele care apar după ce se selectează No -->
   <div id="yesNoButtons">
     <button id="yesAfterNo">Yes</button>
     <button id="noAfterNo" id="noButtonMove">No</button>
   </div>
 
-  <!-- Containnerul pentru video, care va apărea doar dacă se selectează "Yes" -->
   <div id="videoContainer">
-    <iframe width="420" height="315"
-src="https://www.youtube.com/embed/2GeOa14pOuM?autoplay=1&mute=0">
-</iframe>
+    <iframe width="420" height="315" src="https://www.youtube.com/embed/2GeOa14pOuM?autoplay=1&mute=0"></iframe>
   </div>
 </body>
 </html>
