@@ -33,8 +33,9 @@
         textAfterNo.style.display = 'block';
         yesNoButtons.style.display = 'block';
         
-        // Apply explosion animation to the "No" button
-        noButtonMove.classList.add('explodeButton');
+        // Rotate the "No" button and change the text
+        noButtonMove.style.transform = 'rotate(360deg)';
+        noButtonMove.innerHTML = 'Yes'; // Change text to "Yes"
       };
       
       document.getElementById('yesAfterNo').onclick = function () {
@@ -51,14 +52,9 @@
       };
 
       document.getElementById('noAfterNo').onclick = function () {
-        // Remove the "explodeButton" class to reset the animation
-        noButtonMove.classList.remove('explodeButton');
-        
-        // Force reflow to reset the animation
-        void noButtonMove.offsetWidth; // This forces a reflow, allowing animation to restart
-        
-        // Re-add the "explodeButton" class to trigger the animation again
-        noButtonMove.classList.add('explodeButton');
+        // Rotate the "No" button and change the text again
+        noButtonMove.style.transform = 'rotate(360deg)';
+        noButtonMove.innerHTML = 'Yes'; // Change text to "Yes"
       };
     };
   </script>
@@ -151,29 +147,9 @@
       margin-top: 20px;
     }
 
-    /* Animation for explosion effect */
-    @keyframes explodeButton {
-      0% {
-        transform: scale(1);
-        opacity: 1;
-      }
-      50% {
-        transform: scale(2.5); /* The button grows */
-        opacity: 0.5; /* Fading effect */
-      }
-      100% {
-        transform: scale(0); /* The button disappears */
-        opacity: 0;
-      }
-    }
-
-    /* Class that triggers the explosion effect */
-    .explodeButton {
-      animation: explodeButton 0.5s forwards; /* 0.5s for the explosion animation */
-    }
-
+    /* CSS animation for rotation */
     #noButtonMove {
-      transition: transform 1s;
+      transition: transform 0.5s ease; /* Smooth rotation */
     }
   </style>
 </head>
