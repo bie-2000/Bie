@@ -38,9 +38,16 @@
       };
       
       document.getElementById('yesAfterNo').onclick = function () {
-        videoContainer.style.display = 'block'; // Show video
-        textAfterNo.style.display = 'none'; // Hide the "think about it" text
-        yesNoButtons.style.display = 'none'; // Hide Yes and No buttons
+        // Hide the image when Yes is clicked
+        document.getElementById('imageNo').style.display = 'none';
+        document.getElementById('imageYes').style.display = 'none';
+        
+        // Show video
+        videoContainer.style.display = 'block';
+        
+        // Hide the "think about it" text and Yes/No buttons
+        textAfterNo.style.display = 'none';
+        yesNoButtons.style.display = 'none';
       };
 
       document.getElementById('noAfterNo').onclick = function () {
