@@ -13,7 +13,8 @@
       const textAfterNo = document.getElementById('textAfterNo');
       const yesNoButtons = document.getElementById('yesNoButtons');
       const videoContainer = document.getElementById('videoContainer');
-      
+      const body = document.body;
+
       dialog.style.display = 'block'; // Show the dialog initially
 
       yesButton.onclick = function () {
@@ -46,7 +47,9 @@
       };
 
       document.getElementById('noAfterNo').onclick = function () {
-        // Remove any animation or rotation; just keep it simple.
+        // Change the page to white with a message when second "No" is clicked
+        body.style.backgroundColor = 'white';
+        body.innerHTML = '<div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-size: 40px; font-weight: bold; color: black;">No is not an option!</div>';
       };
     };
   </script>
