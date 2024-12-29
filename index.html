@@ -30,10 +30,6 @@
         // Show the text and buttons after selecting No
         textAfterNo.style.display = 'block';
         yesNoButtons.style.display = 'block';
-        
-        // Apply the CSS rotation effect
-        noButton.classList.add('rotated');
-        noButton.innerHTML = 'Yes'; // Change text to "Yes"
       };
       
       document.getElementById('yesAfterNo').onclick = function () {
@@ -50,9 +46,7 @@
       };
 
       document.getElementById('noAfterNo').onclick = function () {
-        // Apply the CSS rotation effect again if No is clicked
-        noButton.classList.add('rotated');
-        noButton.innerHTML = 'Yes'; // Change text to "Yes"
+        // Remove any animation or rotation; just keep it simple.
       };
     };
   </script>
@@ -143,12 +137,6 @@
     #videoContainer {
       display: none;
       margin-top: 20px;
-    }
-
-    /* CSS for rotation effect */
-    #noButton.rotated {
-      transform: rotateY(180deg); /* Rotate on the Y axis */
-      transition: transform 0.5s ease; /* Smooth rotation */
     }
   </style>
 </head>
