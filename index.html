@@ -51,12 +51,14 @@
       };
 
       document.getElementById('noAfterNo').onclick = function () {
-        // Remove explosion effect and re-add it to trigger the animation again
-        noButtonMove.classList.remove('explodeButton'); // Remove the current animation
-        void noButtonMove.offsetWidth; // Trigger a reflow to reset the animation
-        noButtonMove.classList.add('explodeButton'); // Reapply the animation
-
-        noButtonMove.disabled = true; // Optionally disable the button after animation
+        // Remove the "explodeButton" class to reset the animation
+        noButtonMove.classList.remove('explodeButton');
+        
+        // Force reflow to reset the animation
+        void noButtonMove.offsetWidth; // This forces a reflow, allowing animation to restart
+        
+        // Re-add the "explodeButton" class to trigger the animation again
+        noButtonMove.classList.add('explodeButton');
       };
     };
   </script>
